@@ -2,12 +2,12 @@
 
 // const { log } = require("console");
 
-// const logItems = function(array) {
-//     let newArr = [...array]
-//     for (let i = 0; i < newArr.length; i+=1) {
-//         let itemNumber = newArr.indexOf(newArr[i])+1
-//         console.log(`${itemNumber} - ${newArr[i]}`)
-//     }
+// const logItems = function (array) {
+//   let newArr = [...array];
+//   for (let i = 0; i < newArr.length; i += 1) {
+//     let itemNumber = newArr.indexOf(newArr[i]) + 1;
+//     console.log(`${itemNumber} - ${newArr[i]}`);
+//   }
 // };
 
 // logItems(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']);
@@ -15,9 +15,9 @@
 
 // =================================task-02==========================================
 
-// const calculateEngravingPrice = function(message, pricePerWord) {
-//   let wordsArr = message.split(' ')
-//   return wordsArr.length*pricePerWord
+// const calculateEngravingPrice = function (message, pricePerWord) {
+//   let wordsArr = message.split(" ");
+//   return wordsArr.length * pricePerWord;
 // };
 
 // console.log(
@@ -44,13 +44,13 @@
 
 // ===============================task-03========================================
 
-// const findLongestWord = function(string) {
-//   let wordsArr = string.split(' ')
-//   let longestWord= wordsArr[0]
-//   for (let word of wordsArr){
-//       word.length > longestWord.length ? longestWord=word : ''
+// const findLongestWord = function (string) {
+//   let wordsArr = string.split(" ");
+//   let longestWord = wordsArr[0];
+//   for (let word of wordsArr) {
+//     word.length > longestWord.length ? (longestWord = word) : "";
 //   }
-//   return longestWord
+//   return longestWord;
 // };
 
 // console.log(findLongestWord('The quick brown fox jumped over the lazy dog')); // 'jumped'
@@ -61,12 +61,12 @@
 
 // ======================================task-04========================================
 
-// const formatString = function(string) {
-//     if(string.length>= 40){
-//         return (string.slice(0,40)+'...')
-//     }else{
-//         return string
-//     }
+// const formatString = function (string) {
+//   if (string.length >= 40) {
+//     return string.slice(0, 40) + "...";
+//   } else {
+//     return string;
+//   }
 // };
 
 // console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
@@ -86,11 +86,14 @@
 // // вернется форматированная строка
 
 // =======================================task-05===========================================
-// const checkForSpam = function(message) {
-//   if(message.toLowerCase().includes('spam')|| message.toLowerCase().includes('sale')){
-//       return true
-//   } else{
-//       return false
+// const checkForSpam = function (message) {
+//   if (
+//     message.toLowerCase().includes("spam") ||
+//     message.toLowerCase().includes("sale")
+//   ) {
+//     return true;
+//   } else {
+//     return false;
 //   }
 // };
 
@@ -104,22 +107,6 @@
 
 // ==================================task-06================================================
 
-// // Напиши скрипт со следующим функционалом:
-
-// // При загрузке страницы пользователю предлагается в prompt ввести число.
-// // Ввод сохраняется в переменную input и добавляется в массив чисел numbers.
-// // Операция ввода числа пользователем и сохранение в массив продолжается до тех пор,
-// // пока пользователь не нажмет Cancel в prompt.
-// // После того как пользователь прекратил ввод нажав Cancel,
-// // если массив не пустой, необходимо посчитать сумму всех элементов массива и записать
-// // ее в переменную total. Используй цикл for или for...of. После чего в консоль выведи
-// //  строку 'Общая сумма чисел равна [сумма]'.
-// // 🔔 Делать проверку того, что пользователь ввел именно число,
-// // а не произвольный набор символов, не обязательно. Если хочешь, в
-// // случае некорректного ввода, показывай alert с текстом 'Было введено не число, попробуйте еще раз',
-// // при этом результат prompt записывать в массив чисел не нужно, после чего снова пользователю
-// // предлагается ввести число в prompt.
-
 // let input;
 // const numbers = [];
 // let total = 0;
@@ -132,8 +119,8 @@
 //     continue;
 //   } else if (input !== null) {
 //     numbers.push(Number(input));
-//   };
-// };
+//   }
+// }
 
 // const getTotalSum = function (inputNumbers) {
 //   if (inputNumbers.length > 0) {
