@@ -1,5 +1,7 @@
 // ===============================task-01===============================================
 
+// const { log } = require("console");
+
 // const logItems = function(array) {
 //     let newArr = [...array]
 //     for (let i = 0; i < newArr.length; i+=1) {
@@ -145,3 +147,39 @@
 // };
 
 // getTotalSum(numbers);
+
+// =================================task-07=================================
+
+// const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
+
+// const isLoginValid = function (login) {
+//   if (login.length >= 4 && login.length <= 16) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
+
+// const isLoginUnique = function (allLogins, login) {
+//   if (allLogins.includes(login)) {
+//     return false;
+//   } else {
+//     return true;
+//   }
+// };
+
+// const addLogin = function (allLogins, login) {
+//   if (isLoginValid(login) && isLoginUnique(allLogins, login)) {
+//     logins.push(login);
+//     return `Логін "${login}" успішно доданий!`;
+//   } else if (!isLoginValid(login)) {
+//     return "Помилка! Логін повинен бути від 4 до 16 символів";
+//   } else if (!isLoginUnique(allLogins, login)) {
+//     return `Такий логін "${login}" вже використовується!`;
+//   }
+// };
+
+// console.log(addLogin(logins, "Ajax")); // 'Логін успішно доданий!'
+// console.log(addLogin(logins, "robotGoogles")); // 'Такий логін вже використовується!'
+// console.log(addLogin(logins, "Zod")); // 'Помилка! Логін повинен бути від 4 до 16 символів'
+// console.log(addLogin(logins, "jqueryisextremelyfast")); // 'Помилка! Логін повинен бути від 4 до 16 символів'
