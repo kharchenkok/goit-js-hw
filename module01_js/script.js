@@ -50,20 +50,26 @@
 // }
 
 // ====================================task-04=====================================
-// const credits=23580
-// const pricePerDroid= 3000
-// let userOrder = prompt('Вкажіть кількість дроїдів, яку Ви бажаєте придбати')
-// let totalPrice = userOrder*pricePerDroid
-// if (userOrder!==null){
-//  if(!isNaN(userOrder)){
-//     if(totalPrice>credits){
-//         alert ('Недостатньо коштів на рахунку!')
-//     }else{
-//         let userBalance = credits-totalPrice
-//         alert(`Ви купили ${userOrder} дроїдів, на рахунку залишилося ${userBalance} кредитів.`)
+// let credits = 23580;
+// const pricePerDroid = 3000;
+// let userOrder = prompt("Вкажіть кількість дроїдів, яку Ви бажаєте придбати");
+// let totalPrice = userOrder * pricePerDroid;
+// if (userOrder !== null) {
+//   if (!isNaN(userOrder)) {
+//     if (totalPrice > credits) {
+//       alert("Недостатньо коштів на рахунку!");
+//     } else {
+//       credits = credits - totalPrice;
+//       alert(
+//         `Ви купили ${userOrder} дроїдів, на рахунку залишилося ${credits} кредитів.`
+//       );
 //     }
-//  }else{alert('Введіть, будь ласка, число')}
-// }else{alert('Скасовано користувачем!')}
+//   } else {
+//     alert("Введіть, будь ласка, число");
+//   }
+// } else {
+//   alert("Скасовано користувачем!");
+// }
 
 // ========================================task-05=================================
 // let userCountry = prompt('Вкажіть Вашу країну для доставки')
@@ -91,7 +97,7 @@
 //                 price=120
 //                 alert(`Доставка в ${userCountry} буде коштувати ${price} кредитів`)
 //                 break;
-            
+
 //             default:
 //                 alert('У вашій країні доставка недоступна')
 //                 break;
