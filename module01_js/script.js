@@ -54,21 +54,17 @@
 // const pricePerDroid = 3000;
 // let userOrder = prompt("Вкажіть кількість дроїдів, яку Ви бажаєте придбати");
 // let totalPrice = userOrder * pricePerDroid;
-// if (userOrder !== null) {
-//   if (!isNaN(userOrder)) {
-//     if (totalPrice > credits) {
-//       alert("Недостатньо коштів на рахунку!");
-//     } else {
-//       credits = credits - totalPrice;
-//       alert(
-//         `Ви купили ${userOrder} дроїдів, на рахунку залишилося ${credits} кредитів.`
-//       );
-//     }
-//   } else {
-//     alert("Введіть, будь ласка, число");
-//   }
-// } else {
+
+// if (userOrder === null) {
 //   alert("Скасовано користувачем!");
+// } else if (isNaN(userOrder)) {
+//   alert("Введіть, будь ласка, число");
+// } else if (totalPrice > credits) {
+//   alert("Недостатньо коштів на рахунку!");
+// } else {
+//   credits = credits - totalPrice;
+//   alert(
+//     `Ви купили ${userOrder} дроїдів, на рахунку залишилося ${credits} кредитів.`);
 // }
 
 // ========================================task-05=================================
