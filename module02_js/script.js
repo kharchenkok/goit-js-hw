@@ -1,12 +1,11 @@
 // ===============================task-01===============================================
 
-// const { log } = require("console");
 
 // const logItems = function (array) {
-//   let newArr = [...array];
-//   for (let i = 0; i < newArr.length; i += 1) {
-//     let itemNumber = newArr.indexOf(newArr[i]) + 1;
-//     console.log(`${itemNumber} - ${newArr[i]}`);
+// //   let newArr = [...array]; // щоб не працювати з  оригінальним масивом
+//   for (let i = 0; i < array.length; i += 1) {
+//     let itemNumber = array.indexOf(array[i]) + 1;
+//     console.log(`${itemNumber} - ${array[i]}`);
 //   }
 // };
 
@@ -87,9 +86,10 @@
 
 // =======================================task-05===========================================
 // const checkForSpam = function (message) {
+//     let newMessage = message.toLowerCase()
 //   if (
-//     message.toLowerCase().includes("spam") ||
-//     message.toLowerCase().includes("sale")
+//     newMessage.includes("spam") ||
+//     newMessage.includes("sale")
 //   ) {
 //     return true;
 //   } else {
@@ -122,18 +122,28 @@
 //   }
 // }
 
-// const getTotalSum = function (inputNumbers) {
-//   if (inputNumbers.length > 0) {
-//     for (let number of inputNumbers) {
-//       total += number;
+//     if (numbers.length > 0) {
+//       for (let number of numbers) {
+//         total += number;
+//       }
+//       alert(`Загальна сума введених чисел ${total}`);
+//     } else {
+//       alert("Скасовано користувачем");
 //     }
-//     alert(`Загальна сума введених чисел ${total}`);
-//   } else {
-//     alert("Скасовано користувачем");
-//   }
-// };
+  
 
-// getTotalSum(numbers);
+// // const getTotalSum = function (inputNumbers) {
+// //   if (inputNumbers.length > 0) {
+// //     for (let number of inputNumbers) {
+// //       total += number;
+// //     }
+// //     alert(`Загальна сума введених чисел ${total}`);
+// //   } else {
+// //     alert("Скасовано користувачем");
+// //   }
+// // };
+
+// // getTotalSum(numbers);
 
 // =================================task-07=================================
 
