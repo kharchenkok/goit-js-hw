@@ -202,3 +202,111 @@
 
 // console.log(calculateTotalPrice(products, "Дроїд")); // 2800
 
+// ===================================================task-07===================================================
+// // Типів транзацкій всього два.
+// // Можна покласти або зняти гроші з рахунку.
+
+// const Transaction = {
+//   DEPOSIT: "deposit", //type
+//   WITHDRAW: "withdraw",
+// };
+
+// // Кожна транзакція - це об'єкт з властивостями: id, type і amount
+
+// const account = {
+//   id: 0,
+//   // Поточний баланс рахунку
+//   balance: 0,
+
+//   // Історія транзакцій
+//   transactions: [],
+
+//   // Метод створює і повертає об'єкт транзакції. Приймає суму amount і тип type транзакції.
+//   createTransaction(amount, type) {
+//     this.id += 1;
+//     return {
+//       //   id: Date.now(),
+//       id: this.id,
+//       type,
+//       amount,
+//     };
+//   },
+
+//   //    Метод відповідає за додавання суми до балансу. Приймає суму танзакції.
+//   //    Викликає createTransaction для створення об'єкта транзакції після чого додає його в історію транзакцій
+//   deposit(amount) {
+//     this.balance += amount;
+//     const depositTransaction = this.createTransaction(
+//       amount,
+//       Transaction.DEPOSIT
+//     );
+//     this.transactions.push(depositTransaction);
+//     return console.log(
+//       `Сума операції: + ${amount} кредитів. Залишок коштів на Вашому рахунку: ${this.balance} кредитів`
+//     );
+//   },
+
+//   //    Метод відповідає за зняття суми з балансу. Приймає суму танзакції.
+//   //    Викликає createTransaction для створення об'єкта транзакції, після чого додає його в історію транзакцій.
+
+//   //    Якщо amount більше, ніж поточний баланс, виводь повідомлення
+//   //    про те, що зняття такої суми не можливо, недостатньо коштів.
+//   withdraw(amount) {
+//     if (this.balance >= amount) {
+//       this.balance -= amount;
+//       const withdrawTransaction = this.createTransaction(
+//         amount,
+//         Transaction.WITHDRAW
+//       );
+//       this.transactions.push(withdrawTransaction);
+//       return console.log(
+//         `Сума операції: - ${amount} кредитів. Залишок коштів на Вашому рахунку: ${this.balance} кредитів`
+//       );
+//     } else {
+//       return console.log(
+//         `Зняття суми: ${amount} кредитів не можливо, недостатньо коштів на рахунку`
+//       );
+//     }
+//   },
+
+//   //    Метод повертає поточний баланс
+//   getBalance() {
+//     return `Сума Вашого поточного балансу: ${this.balance} кредитів`;
+//   },
+
+//   // Метод шукає і повертає об'єкт транзакції по id
+//   getTransactionDetails(id) {
+//     for (let transaction of this.transactions) {
+//       if (transaction.id === id) {
+//         return transaction;
+//       }
+//     }
+//   },
+
+//   //    Метод повертає кількість коштів певного типу транзакції з усієї історії транзакцій
+//   getTransactionTotal(type) {
+//     let transTotalSum = 0;
+//     for (let transaction of this.transactions) {
+//       if (transaction.type === type) {
+//         transTotalSum += transaction.amount;
+//       }
+//     }
+//     return `Загальна сума операцій ${type} : ${transTotalSum} кредитів`;
+//   },
+// };
+
+// account.deposit(100);
+// account.deposit(200);
+// account.deposit(300);
+// account.deposit(400);
+
+// account.withdraw(50);
+// account.withdraw(100);
+// account.withdraw(200);
+// account.withdraw(700);
+
+// console.log(account.getTransactionTotal("deposit"));
+// console.log(account.getTransactionTotal("withdraw"));
+// console.log(account.getBalance());
+
+// console.log(account.getTransactionDetails(4));
