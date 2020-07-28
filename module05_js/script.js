@@ -2,9 +2,9 @@
 // Напиши функцію-конструктор Account, яка створює об'єкт з властивостями login і email.
 // В prototype функції-конструктора добав метод getInfo(),
 // який виводить в консоль значення полів login і email об'єкта який його викликав.
-// const Account = function({login,email}){
-// this.login = login;
-// this.email = email;
+// const Account = function(obgect){
+// this.login = obgect.login;
+// this.email = obgect.email;
 // }
 
 // Account.prototype.getInfo = function(){
