@@ -82,13 +82,13 @@
 //         return this.items
 //     }
 //     addItem(item){
-//         return this.items.push(item)
+//         this.items.push(item)
 //     }
 //     removeItem(item){
 //         if (this.items.includes(item)){
 //             this.items.splice(this.items.indexOf(item),1)
 //         }
-//         return this.items
+
 //     }
 // }
 
@@ -103,10 +103,10 @@
 // console.table(items); // [ "Нанітоіди", "Пролонгер", "Залізні жупи", "Антигравітатор" ]
 
 // storage.addItem('Дроїд');
-// console.table(storage.items); // [ "Нанітоіди", "Пролонгер", "Залізні жупи", "Антигравітатор", "Дроїд" ]
+// console.table(items); // [ "Нанітоіди", "Пролонгер", "Залізні жупи", "Антигравітатор", "Дроїд" ]
 
 // storage.removeItem('Пролонгер');
-// console.table(storage.items); // [ "Нанітоіди", "Залізні жупи", "Антигравітатор", "Дроїд" ]
+// console.table(items); // [ "Нанітоіди", "Залізні жупи", "Антигравітатор", "Дроїд" ]
 
 // ================================task-04===============================================
 // // Напиши клас StringBuilder.
@@ -127,13 +127,13 @@
 //     return this._value;
 //   }
 //   append(str) {
-//     return (this._value += str);
+//     this._value += str;
 //   }
 //   prepend(str) {
-//     return (this._value = str + this._value);
+//     this._value = str + this._value;
 //   }
 //   pad(str) {
-//     return (this._value = str + this._value + str);
+//     this._value = str + this._value + str;
 //   }
 // }
 
@@ -172,12 +172,12 @@
 //    *  isOn - заведений автомобіль, значення true або false. Спочатку false
 //    *  distance - загальний кілометраж, спочатку 0
 //    */
-//   constructor(obgect) {
-//     this.speed = 0;
+//   constructor(obgect, speed=0, isOn=false, distance=0) {
+//     this.speed = speed;
 //     this._price = obgect.price;
 //     this.maxSpeed = obgect.maxSpeed;
-//     this.isOn = false;
-//     this.distance = 0;
+//     this.isOn = isOn;
+//     this.distance = distance;
 //   }
 
 //   /*
@@ -189,14 +189,14 @@
 //   }
 
 //   set price(value) {
-//     return this._price = value;
+//     this._price = value;
 //   }
 //   /*
 //    * Додай код для того, щоб завести автомобіль
 //    * Записує у властивість isOn значення true
 //    */
 //   turnOn() {
-//     return this.isOn = true;
+//     this.isOn = true;
 //   }
 
 //   /*
@@ -216,8 +216,8 @@
 //    */
 //   accelerate(value) {
 //  (this.speed + value <= this.maxSpeed) ? this.speed += value : ''
-//  return this.speed
-    
+ 
+
 //   }
 
 //   /*
@@ -226,7 +226,7 @@
 //    */
 //   decelerate(value) {
 //     (this.speed - value >= 0) ?  this.speed -= value : ''
-//     return this.speed
+
 //   }
 
 //   /*
@@ -235,7 +235,6 @@
 //    */
 //   drive(hours) {
 //     this.isOn ? this.distance += hours * this.speed : ''
-//     return this.distance
 //   }
 // }
 
