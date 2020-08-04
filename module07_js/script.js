@@ -14,10 +14,10 @@
 // Кількість елементів: 4
 
 // let categories = document.querySelector('#categories')
-// let itemArray = categories.querySelectorAll('.item')
-// console.log(`У списку ${categories.children.length} категорії`);
+// const itemArray = categories.querySelectorAll('#categories .item')
+// console.log(`У списку ${itemArray.length} категорії`);
 // itemArray.forEach(elem =>{
-//     console.log(`Категорія: ${elem.querySelector('h2').textContent}. Кількість елементів:${elem.querySelector('ul').children.length}`);
+//     console.log(`Категорія: ${elem.children[0].textContent}. Кількість елементів:${elem.children[1].children.length}`);
 // })
 
 // ==========================================task-02==================================================
@@ -36,10 +36,10 @@
 
 // =================ex-1=============================
 // let markup = []
-// ingredients.forEach(elem=>{
+// let markup = ingredients.map(elem=>{
 //   let newItem = document.createElement('li')
 //   newItem.textContent = elem;
-//   markup.push(newItem)
+//   return newItem
 // })
 // ingredientsRef.append(...markup)
 
@@ -76,12 +76,15 @@
 //   },
 // ];
 
-// let galleryReff = document.querySelector('#gallery')
-// let markup = ''
-// images.forEach(image =>{
-//   markup +=`<li><img class="gallery-img" src = "${image.url}" alt="${image.alt}"/></li>`
-// })
-// galleryReff.insertAdjacentHTML('afterbegin', markup)
+// const galleryReff = document.querySelector('#gallery')
+
+// let markup = images.reduce((acc,image) =>{
+//   acc.push(`<li><img class="gallery-img" src = "${image.url}" alt="${image.alt}"/></li>`)
+//   return acc
+// },[])
+// console.log(markup);
+// galleryReff.insertAdjacentHTML('afterbegin', markup.join(' '))
+
 // galleryReff.classList.add('gallery-list')
 
 // ====================================task-04============================================
@@ -98,13 +101,25 @@
 
 // let counterValue = 0
 
-// let increment = function(){
-//   counterValue +=1
-//   value.textContent = counterValue
+// let increment = function(){ // робота з даними 
+//     updateCurrentValue('increment')
+//     updateHtmlValue()
 // }
 // let decrement = function(){
-//   counterValue -=1
-//   value.textContent = counterValue
+//     updateCurrentValue('decrement')
+//     updateHtmlValue()
+
+// }
+// let updateCurrentValue = function(str){ // робота з даними
+//     if(str === 'increment'){
+//         counterValue +=1
+//     }else{
+//         counterValue -=1
+//     }
+// }
+// let updateHtmlValue = function(){  //робота з DOM  - виносимо в окрему функцію
+//     value.textContent = counterValue
+
 // }
 
 // incrementBtn.addEventListener('click', increment)
@@ -149,21 +164,31 @@
 //   border-color: #f44336;
 // }
 
-// const inputText = document.querySelector('#validation-input')
-// const checkLength = document.querySelector('[data-length="6"]')
+const inputText = document.querySelector("#validation-input");
+const checkLength = document.querySelector('[data-length="6"]');
+let addClass = "";
+let removeClass = "";
 
-// let checkInputValid = function(){
-// if (inputText.value.length !== Number(checkLength.dataset.length)){
-//   inputText.classList.add('invalid')
-//   inputText.classList.remove('valid')
+let checkInputValid = function () {
+  let inputValue = inputText.value.length;
+  let checkValue = Number(checkLength.dataset.length);
+  if (inputValue !== checkValue) {
+    addClass = "invalid";
+    removeClass = "valid";
+  } else {
+    addClass = "valid";
+    removeClass = "invalid";
+  }
 
-// }else{
-//   inputText.classList.add('valid')
-//   inputText.classList.remove('invalid')
+  inputText.classList.add(addClass);
+  inputText.classList.remove(removeClass);
+};
 
-// }
-// }
-// inputText.addEventListener('change', checkInputValid)
+
+
+
+
+inputText.addEventListener("change", checkInputValid);
 // // inputText.addEventListener('blur', checkInputValid)
 
 // =========================================task-07======================================
@@ -203,7 +228,6 @@
 //   <button type="button" data-action="destroy">Очистити</button>
 // </div>
 // <div id="boxes"></div>
-
 
 // const controlsWrapper = document.querySelector("#controls");
 // const inputNumber = controlsWrapper.querySelector("input");
