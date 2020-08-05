@@ -1,5 +1,4 @@
 import galleryItems from "./gallery-items.js";
-import { log } from "console";
 // console.log(galleryItems);
 // console.log(galleryItems[0].original);
 
@@ -29,7 +28,7 @@ let markup = galleryItems.reduce((acc, item) => {
 }, []);
 
 refs.gallery.insertAdjacentHTML("afterbegin", markup.join(" "));
-// console.log(markup.length);
+console.log(refs.gallery);
 
 let openModal = function (event) {
   event.preventDefault();
@@ -60,6 +59,25 @@ let closeModal = function(event){
         document.removeEventListener('keydown', closeModal)
 
     }
+}
+let flipModalPicture = function(event){
+  let currentModalImgSrc= refs.modalImage.getAttribute('src')
+let galleryImgArr = [...document.querySelectorAll('.gallery__image')]
+let currentModalImgIndex = galleryImgArr.findIndex(item => item.dataset.source === currentModalImgSrc )
+
+  if (event.key === 'ArrowRight'){
+    // console.log(galleryImgArr.length);
+    (currentModalImgIndex +1) >= galleryImgArr.length ? currentModalImgIndex=0 : currentModalImgIndex+=1
+    refs.modalImage.setAttribute('src', galleryImgArr[currentModalImgIndex].dataset.source)
+    // console.log(currentModalImgIndex);
+  }
+
+  if (event.key === 'ArrowLeft'){
+    (currentModalImgIndex -1)<0 ? currentModalImgIndex= galleryImgArr.length-1 : currentModalImgIndex-=1
+    refs.modalImage.setAttribute('src', galleryImgArr[currentModalImgIndex].dataset.source)
+    // console.log(currentModalImgIndex);
+  }
+
 }
 
 
