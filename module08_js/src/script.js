@@ -1,4 +1,5 @@
 import galleryItems from "./gallery-items.js";
+import { log } from "console";
 // console.log(galleryItems);
 // console.log(galleryItems[0].original);
 
@@ -40,22 +41,26 @@ let openModal = function (event) {
     refs.modalImage.alt = event.target.alt
     
     refs.modalBox.addEventListener('click', closeModal)
+    document.addEventListener('keydown', closeModal)
+    document.addEventListener('keydown', flipModalPicture)
     
 }
 
 };
 
 let closeModal = function(event){
-    // console.log(event.target.dataset);
-    if(event.target.dataset.action !== 'close-lightbox'){
+    // console.dir(event);
+    if(event.target.dataset.action !== 'close-lightbox' && event.target.className !== 'lightbox__overlay' && event.key !== 'Escape'){
         return
-    } else{
+      } else{
         refs.modalBox.classList.remove('is-open');
         refs.modalImage.src = '';
         refs.modalImage.alt = '';
         refs.modalBox.removeEventListener('click', closeModal)
+        document.removeEventListener('keydown', closeModal)
 
     }
 }
+
 
 refs.gallery.addEventListener("click", openModal);
